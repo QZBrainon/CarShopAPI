@@ -1,11 +1,19 @@
+import Car from '../Domains/Car';
 import ICar from '../Interfaces/ICar';
-import CarODM from '../Models/CarODM';
+import CarODOM from '../Models/CarODM';
 
 export default class CarService {
-  constructor(public Odm = new CarODM()) {}
+  createCarDomain(car: ICar): Car | null {
+    if (car) {
+      return new Car(car);
+    }
+    return null;
+  }
 
-  public async postCar(car:ICar) {
-    const result = await this.Odm.postCar(car);
-    return result;
-  } 
+  public async create(car: ICar): Promise<Car | null> {
+    const carODM = new CarODOM();
+    const newCar = await carODM.create(car);
+    const carTyped = this.createCarDomain(newCar);
+    return carTyped;
+  }
 }
