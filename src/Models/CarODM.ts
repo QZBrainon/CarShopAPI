@@ -12,7 +12,12 @@ export default class CarODM extends AbstractODM<ICar> {
       buyValue: { type: Number, required: true },
       doorsQty: { type: Number, required: true },
       seatsQty: { type: Number, required: true },
-    });
+    }, { versionKey: false });
     super('Car', schema);
+  }
+
+  public async findById(id: string) {
+    const result = await this.model.findById(id);
+    return result;
   }
 }
