@@ -20,4 +20,9 @@ export default class CarODM extends AbstractODM<ICar> {
     const result = await this.model.findById(id);
     return result;
   }
+
+  public async updateById(id: string, newCar:ICar) {
+    const result = await this.model.findByIdAndUpdate(id, newCar);
+    return result;
+  }
 }
