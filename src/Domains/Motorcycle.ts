@@ -11,12 +11,12 @@ export default class Motorcycle implements IVehicle {
   private category: 'Street' | 'Custom' | 'Trail';
   private engineCapacity: number;
 
-  constructor({ status = false, ...motorcycle }: IMotorcycle) {
+  constructor(motorcycle: IMotorcycle) {
     this.id = motorcycle.id;
     this.model = motorcycle.model;
     this.year = motorcycle.year;
     this.color = motorcycle.color;
-    this.status = status;
+    this.status = motorcycle.status || false;
     this.buyValue = motorcycle.buyValue;
     this.category = motorcycle.category;
     this.engineCapacity = motorcycle.engineCapacity;
