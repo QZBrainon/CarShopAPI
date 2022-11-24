@@ -1,12 +1,12 @@
 import IVehicle from '../Interfaces/IVehicle';
 
 export default class Vehicle {
-  id: string | undefined;
-  model: string;
-  year: number;
-  color: string;
-  status: boolean;
-  buyValue: number;
+  protected id: string | undefined;
+  protected model: string;
+  protected year: number;
+  protected color: string;
+  protected status: boolean;
+  protected buyValue: number;
 
   constructor(vehicle: IVehicle) {
     this.id = vehicle.id;
