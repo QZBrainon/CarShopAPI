@@ -1,56 +1,29 @@
 import IMotorcycle from '../Interfaces/IMotorcycle';
-import IVehicle from '../Interfaces/IVehicle';
+import Vehicle from './Vehicle';
 
-export default class Motorcycle implements IVehicle {
-  id: string | undefined;
-  model: string;
-  year: number;
-  color: string;
-  status: boolean;
-  buyValue: number;
+export default class Motorcycle extends Vehicle {
   private category: 'Street' | 'Custom' | 'Trail';
   private engineCapacity: number;
 
   constructor(motorcycle: IMotorcycle) {
-    this.id = motorcycle.id;
-    this.model = motorcycle.model;
-    this.year = motorcycle.year;
-    this.color = motorcycle.color;
-    this.status = motorcycle.status || false;
-    this.buyValue = motorcycle.buyValue;
+    super(motorcycle);
     this.category = motorcycle.category;
     this.engineCapacity = motorcycle.engineCapacity;
   }
 
-  public getModel() {
-    return this.model;
+  public getCategory() {
+    return this.category;
   }
 
-  public setModel(model: string) {
-    this.model = model;
+  public setCategory(category: 'Street' | 'Custom' | 'Trail') {
+    this.category = category;
   }
 
-  public getYear() {
-    return this.year;
+  public getEngineCapacity() {
+    return this.engineCapacity;
   }
 
-  public setYear(year: number) {
-    this.year = year;
-  }
-
-  public getColor() {
-    return this.color;
-  }
-
-  public setColor(color: string) {
-    this.color = color;
-  }
-
-  public getBuyValue() {
-    return this.buyValue;
-  }
-
-  public setBuyValue(buyValue: number) {
-    this.buyValue = buyValue;
+  public setEngineCapacity(capacity: number) {
+    this.engineCapacity = capacity;
   }
 }
