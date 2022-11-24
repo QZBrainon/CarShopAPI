@@ -53,4 +53,20 @@ export default class Car implements IVehicle {
   public setBuyValue(buyValue: number) {
     this.buyValue = buyValue;
   }
+
+  public getDoorsQty() {
+    return this.doorsQty;
+  }
+
+  public setDoorsQty(qty: number) {
+    this.doorsQty = qty;
+  }
+
+  public getSeatsQty() {
+    return this.seatsQty;
+  }
+  
+  public SetSeatsQty(qty:number) {
+    this.seatsQty = qty;
+  }
 }
