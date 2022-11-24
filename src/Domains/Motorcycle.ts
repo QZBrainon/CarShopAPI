@@ -53,20 +53,4 @@ export default class Motorcycle implements IVehicle {
   public setBuyValue(buyValue: number) {
     this.buyValue = buyValue;
   }
-
-  public getCategory() {
-    return this.category;
-  }
-
-  public setCategory(category: 'Street' | 'Custom' | 'Trail') {
-    this.category = category;
-  }
-
-  public getEngineCapacity() {
-    return this.engineCapacity;
-  }
-
-  public setEngineCapacity(capacity: number) {
-    this.engineCapacity = capacity;
-  }
 }
